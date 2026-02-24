@@ -1,34 +1,33 @@
 # Supreme Auto Parts (supremeautoparts.us)
 
-This is a static copy of the Supreme Auto Parts website, migrated from supreme-autoparts.com and configured for the supremeautoparts.us domain.
+Static copy of the Supreme Auto Parts website, migrated from supreme-autoparts.com.
 
-## Contents
+## Deploy to Vercel via GitHub
 
-- **supremeautoparts.us/** – Full static website including:
-  - Homepage, categories, product pages
-  - About, Contact, Brands, Cart
-  - Terms, Privacy Policy, Return Policy, Track Order
-  - All images, CSS, and JavaScript assets
-
-## Deploy to Vercel
-
-1. Go to [vercel.com](https://vercel.com) and sign in
-2. Click **Add New** → **Project**
-3. Import from Git or upload the `supremeautoparts.us` folder as a static site
-4. Set the **Output Directory** to `supremeautoparts.us` (or use the folder as the root)
-5. Add your custom domain `supremeautoparts.us` in Project Settings → Domains
-6. Update DNS at GoDaddy to point to Vercel (see earlier setup instructions)
-
-## Serve Locally
+### 1. Create GitHub repo and push
 
 ```bash
-cd supremeautoparts.us
+# Create a new repo at github.com/new (e.g. "supreme-autoparts-us")
+# Then run:
+
+cd "/Users/Shared/Supreme Auto Parts"
+git remote add origin https://github.com/YOUR_USERNAME/supreme-autoparts-us.git
+git branch -M main
+git push -u origin main
+```
+
+### 2. Deploy on Vercel
+
+1. Go to [vercel.com](https://vercel.com) → **Add New** → **Project**
+2. **Import** your GitHub repository
+3. Vercel auto-detects static files — leave settings as default
+4. Click **Deploy**
+5. Add custom domain: **Settings** → **Domains** → Add `supremeautoparts.us` and `www.supremeautoparts.us`
+6. Update DNS at GoDaddy to point to Vercel
+
+## Serve locally
+
+```bash
 npx serve .
 # or: python3 -m http.server 8000
 ```
-
-Then open http://localhost:3000 (or http://localhost:8000)
-
-## Note
-
-This is a static snapshot. The original site (supreme-autoparts.com) is a Next.js app with dynamic features (search, cart, checkout). This copy provides the layout and content; product search and checkout will redirect to the live parts catalog/API.
